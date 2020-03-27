@@ -65,7 +65,7 @@ namespace LazyW2SFinder
 
             Console.WriteLine("Hello from Lazy W2S Finder :) (SAFELY REMOVED LOGFILE)!");
             //Renderer.OnRenderer += OnRenderer;
-            //Memory.OnTick += OnTick;
+            Memory.OnTick += OnTick;
             //Input.OnInput += OnInput;
         }
 

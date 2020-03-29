@@ -63,10 +63,10 @@ namespace LazyW2SFinder
             //Console.WriteLine(readText);
             Console.WriteLine(AppDomain.CurrentDomain.ToString());
 
-            Console.WriteLine("Hello from Lazy W2S Finder :) (цлеан)!");
-            //Renderer.OnRenderer += OnRenderer;
-            //Memory.OnTick += OnTick;
-            //Input.OnInput += OnInput;
+            Console.WriteLine("Hello from Lazy W2S Finder :) !");
+            Renderer.OnRenderer += OnRenderer;
+            Memory.OnTick += OnTick;
+            Input.OnInput += OnInput;
         }
 
 

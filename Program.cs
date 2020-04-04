@@ -64,11 +64,16 @@ namespace LazyW2SFinder
             Console.WriteLine(AppDomain.CurrentDomain.ToString());
 
             Console.WriteLine("Hello from Lazy W2S Finder :) (clean) !");
-            Renderer.OnRenderer += OnRenderer;
-            Memory.OnTick += OnTick;
-            Input.OnInput += OnInput;
+            //Renderer.OnRenderer += OnRenderer;
+            //Memory.OnTick += OnTick;
+            //Input.OnInput += OnInput;
+            Memory.OnTick += OnTick2;
         }
-
+        
+        private static void OnTick(int counter, EventArgs args)
+        {
+            Console.WriteLine("OnTickIsFine");
+        }
 
         private static void OnTick(int counter, EventArgs args)
         {

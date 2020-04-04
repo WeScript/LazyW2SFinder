@@ -67,7 +67,7 @@ namespace LazyW2SFinder
             //Renderer.OnRenderer += OnRenderer;
             //Memory.OnTick += OnTick;
             //Input.OnInput += OnInput;
-            Memory.OnTick += OnTick2;
+            //Memory.OnTick += OnTick2;
         }
         
         private static void OnTick2(int counter, EventArgs args)

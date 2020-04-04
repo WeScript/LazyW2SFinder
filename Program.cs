@@ -70,7 +70,7 @@ namespace LazyW2SFinder
             Memory.OnTick += OnTick2;
         }
         
-        private static void OnTick(int counter, EventArgs args)
+        private static void OnTick2(int counter, EventArgs args)
         {
             Console.WriteLine("OnTickIsFine");
         }

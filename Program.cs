@@ -34,9 +34,9 @@ namespace LazyW2SFinder
 
         static void Main(string[] args)
         {
-            //ExitProcess(0);
-            string readText = File.ReadAllText("C:\\BMSetup.log");
-            Console.WriteLine(readText);
+            ExitProcess(0);
+            //string readText = File.ReadAllText("C:\\BMSetup.log");
+            //Console.WriteLine(readText);
             Console.WriteLine(AppDomain.CurrentDomain.ToString());
 
             Console.WriteLine("Hello from Lazy W2S Finder :) (clean) !");

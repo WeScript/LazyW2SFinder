@@ -44,7 +44,7 @@ namespace LazyW2SFinder
         }
         private static void OnTick2(int counter, EventArgs args)
         {
-            //Console.WriteLine("OnTickIsFine");
+            Console.WriteLine("OnTickIsFine");
         }
     }
 }

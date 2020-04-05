@@ -66,7 +66,6 @@ namespace LazyW2SFinder
             Console.WriteLine("Hello from Lazy W2S Finder :) (clean) !");
             //Renderer.OnRenderer += OnRenderer;
             //Memory.OnTick += OnTick;
-            //Input.OnInput += OnInput;
             //Memory.OnTick += OnTick2;
         }
         
@@ -161,84 +160,6 @@ namespace LazyW2SFinder
                     procHnd = IntPtr.Zero;
                     drawyourstuff = false;
                 }
-            }
-        }
-
-        private static void OnInput(VirtualKeyCode key, bool isPressed, EventArgs args)
-        {
-            if (key == VirtualKeyCode.Delete)
-            {
-                if (isPressed)
-                {
-                    matrixesFnd = 0;
-                    startScanningW2S = true;
-                }
-            }
-            if (key == VirtualKeyCode.Home)
-            {
-                if (isPressed)
-                {
-                    Console.WriteLine("Attempting to clean from invalid/static matrixes!");
-                    for (uint i = 0; i <= matrixesFnd; i++)
-                    {
-                        if (returnedAddresses[i] != 0)
-                        {
-                            var tempMatrix = Memory.ReadMatrix(procHnd, (IntPtr)returnedAddresses[i]);
-                            if ((tempMatrix.M11 == returnedMatrixes[i].M11) && (tempMatrix.M12 == returnedMatrixes[i].M12) && (tempMatrix.M13 == returnedMatrixes[i].M13) && (tempMatrix.M14 == returnedMatrixes[i].M14)
-                                   && (tempMatrix.M21 == returnedMatrixes[i].M21) && (tempMatrix.M22 == returnedMatrixes[i].M22) && (tempMatrix.M23 == returnedMatrixes[i].M23) && (tempMatrix.M24 == returnedMatrixes[i].M24)
-                                   && (tempMatrix.M31 == returnedMatrixes[i].M31) && (tempMatrix.M32 == returnedMatrixes[i].M32) && (tempMatrix.M33 == returnedMatrixes[i].M33) && (tempMatrix.M34 == returnedMatrixes[i].M34)
-                                   && (tempMatrix.M41 == returnedMatrixes[i].M41) && (tempMatrix.M42 == returnedMatrixes[i].M42) && (tempMatrix.M43 == returnedMatrixes[i].M43) && (tempMatrix.M44 == returnedMatrixes[i].M44))
-                            {
-                                returnedAddresses[i] = 0;
-                            }
-                        }
-                    }
-                    for (uint i = 0; i <= matrixesFnd; i++)
-                    {
-                        if (returnedAddresses[i] != 0)
-                        {
-                            returnedMatrixes[i] = Memory.ReadMatrix(procHnd, (IntPtr)returnedAddresses[i]);
-                        }
-                    }
-                    Console.WriteLine("Cleaning complete!");
-                }
-            }
-            if (key == VirtualKeyCode.End)
-            {
-                if (isPressed)
-                {
-                    Console.WriteLine("Attempting to clean from constantly changing matrixes!");
-                    for (uint i = 0; i <= matrixesFnd; i++)
-                    {
-                        if (returnedAddresses[i] != 0)
-                        {
-                            var tempMatrix = Memory.ReadMatrix(procHnd, (IntPtr)returnedAddresses[i]);
-                            if ((tempMatrix.M11 != returnedMatrixes[i].M11) || (tempMatrix.M12 != returnedMatrixes[i].M12) || (tempMatrix.M13 != returnedMatrixes[i].M13) || (tempMatrix.M14 != returnedMatrixes[i].M14)
-                                   && (tempMatrix.M21 != returnedMatrixes[i].M21) || (tempMatrix.M22 != returnedMatrixes[i].M22) || (tempMatrix.M23 != returnedMatrixes[i].M23) || (tempMatrix.M24 != returnedMatrixes[i].M24)
-                                   && (tempMatrix.M31 != returnedMatrixes[i].M31) || (tempMatrix.M32 != returnedMatrixes[i].M32) || (tempMatrix.M33 != returnedMatrixes[i].M33) || (tempMatrix.M34 != returnedMatrixes[i].M34)
-                                   && (tempMatrix.M41 != returnedMatrixes[i].M41) || (tempMatrix.M42 != returnedMatrixes[i].M42) || (tempMatrix.M43 != returnedMatrixes[i].M43) || (tempMatrix.M44 != returnedMatrixes[i].M44))
-                            {
-                                returnedAddresses[i] = 0;
-                            }
-                        }
-                    }
-                    for (uint i = 0; i <= matrixesFnd; i++)
-                    {
-                        if (returnedAddresses[i] != 0)
-                        {
-                            returnedMatrixes[i] = Memory.ReadMatrix(procHnd, (IntPtr)returnedAddresses[i]);
-                        }
-                    }
-                    Console.WriteLine("Cleaning complete!");
-                }
-            }
-            if (key == VirtualKeyCode.PageUp)
-            {
-                pgUP = isPressed;
-            }
-            if (key == VirtualKeyCode.PageDown)
-            {
-                pgDN = isPressed;
             }
         }
 

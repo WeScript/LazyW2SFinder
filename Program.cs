@@ -40,7 +40,7 @@ namespace LazyW2SFinder
             Console.WriteLine(AppDomain.CurrentDomain.ToString());
 
             Console.WriteLine("Hello from Lazy W2S Finder :) (clean) !");
-            Memory.OnTick += OnTick2;
+            //Memory.OnTick += OnTick2;
         }
         private static void OnTick2(int counter, EventArgs args)
         {

@@ -106,7 +106,7 @@ namespace LazyW2SFinder
                         gameBase = Memory.GetModule(procHnd, "hl.exe");
                         gameSize = Memory.GetModuleSize(procHnd, "hl.exe");
                         Console.WriteLine($"Found GameBase at: {gameBase.ToString("X")} and GameSize: {gameSize.ToString("X")}");
-                        matrixesFnd = Memory.FindPossibleMatrix(procHnd, gameBase, gameSize, vecToSearchFor, out returnedAddresses, (int)W2SType.TypeCustom1);
+                        matrixesFnd = Memory.FindPossibleMatrix(procHnd, gameBase, gameSize, vecToSearchFor, out returnedAddresses, (int)W2SType.TypeOGL);
                         Console.WriteLine($"Total possible matrix found: {matrixesFnd.ToString()}");
                         for (uint i = 0; i <= matrixesFnd; i++)
                         {
@@ -250,7 +250,7 @@ namespace LazyW2SFinder
 
             Renderer.DrawText("W2SType.TypeOGL is drawn in RED", wndMargins.X + 100, wndMargins.Y + 140, Color.Red);
             Renderer.DrawText("W2SType.TypeD3D is drawn in GREEN", wndMargins.X + 100, wndMargins.Y + 150, Color.Green);
-            Renderer.DrawText("W2SType.Custom1 is drawn in BLUE", wndMargins.X + 100, wndMargins.Y + 160, Color.Blue);
+            Renderer.DrawText("W2SType.D3D11 is drawn in BLUE", wndMargins.X + 100, wndMargins.Y + 160, Color.Blue);
 
             //drawing box of truth
             Renderer.DrawRect(wndMargins.X + wndSize.X / 4, wndMargins.Y + 100, 50, 50, new Color(255, 255, 255, 30));

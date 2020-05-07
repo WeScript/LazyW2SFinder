@@ -281,7 +281,7 @@ namespace LazyW2SFinder
                     {
                         Vector2 vec2D = new Vector2(0, 0);
                         var matrix = Memory.ReadMatrix(procHnd, (IntPtr)returnedAddresses[i]);
-                        if (Renderer.WorldToScreen(vecToSearchFor, out vec2D, (matrix), wndMargins, wndSize, W2SType.TypeCustom1))
+                        if (Renderer.WorldToScreen(vecToSearchFor, out vec2D, (matrix), wndMargins, wndSize, W2SType.TypeOGL))
                         {
 
                             Renderer.DrawText($"{returnedAddresses[i].ToString("X")}", vec2D.X, vec2D.Y, new Color(255, 255, 255, 70), 16, TextAlignment.lefted, false);
@@ -296,7 +296,7 @@ namespace LazyW2SFinder
                         //{
                         //    Renderer.DrawText($"{returnedAddresses[i].ToString("X")}", vec2D.X, vec2D.Y, Color.Green);
                         //}
-                        //if (Renderer.WorldToScreen(vecToSearchFor, out vec2D, matrix, wndMargins, wndSize, W2SType.TypeCustom1))
+                        //if (Renderer.WorldToScreen(vecToSearchFor, out vec2D, matrix, wndMargins, wndSize, W2SType.TypeOGL))
                         //{
                         //    Renderer.DrawText($"{returnedAddresses[i].ToString("X")}", vec2D.X, vec2D.Y, Color.Blue);
                         //}
@@ -315,14 +315,14 @@ namespace LazyW2SFinder
                 //{
                 //    Renderer.DrawFilledRect(vec2D.X - 8, vec2D.Y - 8, 16, 16, Color.Green);
                 //}
-                //if (Renderer.WorldToScreen(vecToSearchFor, out vec2D, matrix, wndMargins, wndSize, W2SType.TypeCustom1))
+                //if (Renderer.WorldToScreen(vecToSearchFor, out vec2D, matrix, wndMargins, wndSize, W2SType.TypeOGL))
                 //{
                 //    Renderer.DrawFilledRect(vec2D.X - 8, vec2D.Y - 8, 16, 16, Color.Blue);
                 //}
             }
             Vector2 vec2D1 = new Vector2(0, 0);
             var matrix1 = Memory.ReadMatrix(procHnd, (IntPtr)/*returnedAddresses[indexToUse]*/0x1413BEB1C); //Deceit.exe+1B8EB1C
-            if (Renderer.WorldToScreen(vecToSearchFor, out vec2D1, matrix1, wndMargins, wndSize, W2SType.TypeCustom1))
+            if (Renderer.WorldToScreen(vecToSearchFor, out vec2D1, matrix1, wndMargins, wndSize, W2SType.TypeOGL))
             {
                 Renderer.DrawFilledRect(vec2D1.X - 8, vec2D1.Y - 8, 16, 16, Color.Red);
             }
